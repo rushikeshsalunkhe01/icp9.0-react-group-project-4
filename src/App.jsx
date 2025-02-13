@@ -1,8 +1,11 @@
 import React from 'react'
+import TrainDetails from './pages/TrainSearch/TrainDetails'
 
 const App = () => {
   return (
-    <div>App</div>
+    <div>App
+      <TrainDetails/>
+    </div>
   )
 }
 
