@@ -14,9 +14,9 @@ const Button = ({
   };
 
   const sizeStyles = {
-    small: "px-4 py-2 text-sm rounded-md",
-    medium: "px-5 py-3 text-base rounded-lg",
-    large: "px-6 py-4 text-lg rounded-xl",
+    small: "px-4 py-2 text-sm rounded-md bold",
+    medium: "px-5 py-2 text-base rounded-lg bold",
+    large: "px-6 py-2 text-lg rounded-xl bold",
   };
 
   return (
