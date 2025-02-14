@@ -76,8 +76,22 @@ const Navbar = () => {
             )}
           </div>
 
-          {/* Support Page */}
-          <Link to="/support" className="hover:text-[#FFA500]">Support</Link>
+          {/* Support Dropdown */}
+          <div className="relative">
+            <button
+              onClick={() => toggleDropdown("support")}
+              className="hover:text-[#FFA500] flex items-center"
+            >
+              Support <ChevronDown className="ml-1" />
+            </button>
+            {dropdown === "support" && (
+              <div className="absolute bg-white text-black mt-5 w-40 shadow-lg rounded-lg">
+                <Link to="/support" className="block px-4 py-2 hover:bg-gray-200">Support</Link>
+                <Link to="/contact-us" className="block px-4 py-2 hover:bg-gray-200">Contact Us</Link>
+                <Link to="/faqs" className="block px-4 py-2 hover:bg-gray-200">FAQs</Link>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Mobile Menu Button */}
@@ -95,11 +109,26 @@ const Navbar = () => {
           <Link to="/booking" className="hover:text-[#FFA500]" onClick={() => setMobileMenu(false)}>Booking</Link>
           <Link to="/pnr-status" className="hover:text-[#FFA500]" onClick={() => setMobileMenu(false)}>PNR Status</Link>
           <Link to="/admin-panel" className="hover:text-[#FFA500]" onClick={() => setMobileMenu(false)}>Admin Panel</Link>
-          <Link to="/support" className="hover:text-[#FFA500]" onClick={() => setMobileMenu(false)}>Support</Link>
+
+          {/* Mobile Support Dropdown */}
+          <div className="relative">
+            <button
+              onClick={() => toggleDropdown("supportMobile")}
+              className="hover:text-[#FFA500] flex items-center"
+            >
+              Support <ChevronDown className="ml-1" />
+            </button>
+            {dropdown === "supportMobile" && (
+              <div className="absolute bg-white text-black mt-5 w-40 shadow-lg rounded-lg">
+                <Link to="/support" className="block px-4 py-2 hover:bg-gray-200" onClick={() => setMobileMenu(false)}>Support</Link>
+                <Link to="/faqs" className="block px-4 py-2 hover:bg-gray-200" onClick={() => setMobileMenu(false)}>FAQs</Link>
+              </div>
+            )}
+          </div>
         </div>
       )}
     </nav>
   );
 };
 
-export default Navbar
+export default Navbar;
