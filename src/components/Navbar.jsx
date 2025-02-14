@@ -87,8 +87,7 @@ const Navbar = () => {
             {dropdown === "support" && (
               <div className="absolute bg-white text-black mt-5 w-40 shadow-lg rounded-lg">
                 <Link to="/support" className="block px-4 py-2 hover:bg-gray-200">Support</Link>
-                <Link to="/contact-us" className="block px-4 py-2 hover:bg-gray-200">Contact Us</Link>
-                <Link to="/faqs" className="block px-4 py-2 hover:bg-gray-200">FAQs</Link>
+                <Link to="src\views\support\FAQs.jsx" className="block px-4 py-2 hover:bg-gray-200">FAQs</Link>
               </div>
             )}
           </div>

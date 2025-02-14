@@ -4,27 +4,19 @@ import Navbar from "./components/Navbar";
 import Home from "./views/Home";
 import TrainDetails from "./views/TrainSearch/TrainDetails";
 import SupportView from "./views/support/SupportView";
-
-// Import Support Page
+import FAQs from "./views/support/FAQs"; // Imported but not used
 
 const App = () => {
   return (
-    <Router> 
+    <Router>
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} /> {/* Home Page */}
         <Route path="/train-details" element={<TrainDetails />} /> {/* Train Details Page */}
-<<<<<<< HEAD
         <Route path="/support" element={<SupportView />} /> {/* Support Page */}
-        </Routes>
-=======
-        <Route path="/support" element={<SupportView />} />{/* Support Page */}
-        
-        
+        <Route path="/faqs" element={<FAQs />} /> {/* FAQs Page */}
       </Routes>
->>>>>>> 777efe80c3349c283bb8eb226cdb63f6b9a16ba0
     </Router>
-    
   );
 };
 
