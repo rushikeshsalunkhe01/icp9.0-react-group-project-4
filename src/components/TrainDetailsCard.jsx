@@ -3,13 +3,13 @@ import Button from "./Button";
 
 const TrainDetailsCard = ({ train }) => {
   return (
-    <div className="bg-white shadow-md rounded-xl p-4 w-[400px] h-[400px] hover:scale-105 transition-transform border border-gray-300">
+    <div className="bg-white shadow-md rounded-xl p-4 w-[400px] h-[450px] hover:scale-105 transition-transform border border-gray-300">
         <img
         src={train.image}
         alt={train.name}
         className="w-full h-[150px] object-cover rounded-lg mb-3"
         />
-        <h2 className="text-xl font-semibold">{train.name}</h2>
+        <h2 className="text-xl font-semibold text-center py-2">{train.name}</h2>
         <p className="text-gray-600">Train No: {train.number}</p>
         <p>
             <strong>Departure:</strong> {train.departure}
@@ -34,7 +34,10 @@ const TrainDetailsCard = ({ train }) => {
         >
             {train.availability}
         </p>
-        <Button text="Book Now"/>
+        <div className="block mx-auto w-full pt-5">
+            <Button text="Book Now" />
+        </div>
+        
     </div>
   );
 };
