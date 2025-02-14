@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import Logo from "../assets/images/logo.png";
 
 const Navbar = () => {
   const [dropdown, setDropdown] = useState(null);
-  const [mobileMenu, setMobileMenu] = useState(false);
 
   const toggleDropdown = (menu) => {
     setDropdown(dropdown === menu ? null : menu);
@@ -76,30 +75,18 @@ const Navbar = () => {
             )}
           </div>
 
-          {/* Support Page */}
+          {/* Support Page - Linked to views/support/SupportView.js */}
           <Link to="/support" className="hover:text-[#FFA500]">Support</Link>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu (Hamburger Icon) */}
         <div className="md:hidden">
-          <button onClick={() => setMobileMenu(!mobileMenu)} className="text-white text-xl">
-            {mobileMenu ? <X size={28} /> : <Menu size={28} />}
-          </button>
+          <button className="text-white text-xl">&#9776;</button>
         </div>
+        
       </div>
-
-      {/* Mobile Menu */}
-      {mobileMenu && (
-        <div className="md:hidden bg-[#008000] text-white flex flex-col space-y-4 p-4">
-          <Link to="/train-search" className="hover:text-[#FFA500]" onClick={() => setMobileMenu(false)}>Train Search</Link>
-          <Link to="/booking" className="hover:text-[#FFA500]" onClick={() => setMobileMenu(false)}>Booking</Link>
-          <Link to="/pnr-status" className="hover:text-[#FFA500]" onClick={() => setMobileMenu(false)}>PNR Status</Link>
-          <Link to="/admin-panel" className="hover:text-[#FFA500]" onClick={() => setMobileMenu(false)}>Admin Panel</Link>
-          <Link to="/support" className="hover:text-[#FFA500]" onClick={() => setMobileMenu(false)}>Support</Link>
-        </div>
-      )}
     </nav>
   );
 };
 
-export default Navbar
+export default Navbar;
