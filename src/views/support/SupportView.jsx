@@ -1,92 +1,31 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { ChevronDown } from "lucide-react";
-import Logo from "../assets/images/logo.png";
+import React from "react";
 
-const Navbar = () => {
-  const [dropdown, setDropdown] = useState(null);
-
-  const toggleDropdown = (menu) => {
-    setDropdown(dropdown === menu ? null : menu);
-  };
-
+const Support = () => {
   return (
-    <nav className="bg-[#008000] text-white shadow-lg text-xl fixed top-0 w-full z-50">
-      <div className="container mx-auto flex justify-between items-center px-6 h-20">
-        
-        {/* Logo */}
-        <Link to="/" className="flex items-center">
-          <img src={Logo} alt="Train Booking Logo" className="h-16" />
-        </Link>
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-6">
+      <h1 className="text-3xl font-bold text-green-700 mb-4">Support</h1>
+      <p className="text-lg text-gray-700 text-center max-w-2xl">
+        If you need any help or have any questions, feel free to reach out to our support team. 
+        We are here to assist you with your train booking experience.
+      </p>
 
-        {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-10">
-          
-          {/* Train Search Dropdown */}
-          <div className="relative">
-            <button
-              onClick={() => toggleDropdown("trainSearch")}
-              className="hover:text-[#FFA500] flex items-center"
-            >
-              Train Search <ChevronDown className="ml-1" />
-            </button>
-            {dropdown === "trainSearch" && (
-              <div className="absolute bg-white text-black mt-5 w-40 shadow-lg rounded-lg">
-                <Link to="/train-search" className="block px-4 py-2 hover:bg-gray-200">Search Trains</Link>
-                <Link to="/train-filter" className="block px-4 py-2 hover:bg-gray-200">Filter Trains</Link>
-                <Link to="/train-details" className="block px-4 py-2 hover:bg-gray-200">Train Details</Link>
-              </div>
-            )}
-          </div>
-
-          {/* Booking Dropdown */}
-          <div className="relative">
-            <button
-              onClick={() => toggleDropdown("booking")}
-              className="hover:text-[#FFA500] flex items-center"
-            >
-              Booking <ChevronDown className="ml-1" />
-            </button>
-            {dropdown === "booking" && (
-              <div className="absolute bg-white text-black mt-5 w-48 shadow-lg rounded-lg">
-                <Link to="/booking" className="block px-4 py-2 hover:bg-gray-200">Book Ticket</Link>
-                <Link to="/passenger-details" className="block px-4 py-2 hover:bg-gray-200">Passenger Details</Link>
-                <Link to="/payment" className="block px-4 py-2 hover:bg-gray-200">Payment</Link>
-              </div>
-            )}
-          </div>
-
-          {/* PNR Status */}
-          <Link to="/pnr-status" className="hover:text-[#FFA500]">PNR Status</Link>
-
-          {/* Admin Panel Dropdown */}
-          <div className="relative">
-            <button
-              onClick={() => toggleDropdown("admin")}
-              className="hover:text-[#FFA500] flex items-center"
-            >
-              Admin Panel <ChevronDown className="ml-1" />
-            </button>
-            {dropdown === "admin" && (
-              <div className="absolute bg-white text-black mt-5 w-44 shadow-lg rounded-lg">
-                <Link to="/manage-users" className="block px-4 py-2 hover:bg-gray-200">Manage Users</Link>
-                <Link to="/train-schedules" className="block px-4 py-2 hover:bg-gray-200">Train Schedules</Link>
-              </div>
-            )}
-          </div>
-
-          {/* Support Page - Linked to views/support/SupportView.js */}
-          <Link to="/support" className="hover:text-[#FFA500]">Support</Link>
-        </div>
-
-        {/* Mobile Menu (Hamburger Icon) */}
-        <div className="md:hidden">
-          <button className="text-white text-xl">&#9776;</button>
-        </div>
-        
+      <div className="mt-6">
+        <h2 className="text-2xl font-semibold text-green-600">Contact Us</h2>
+        <p className="text-gray-700 mt-2">Email: support@trainbooking.com</p>
+        <p className="text-gray-700">Phone: +91 12345 67890</p>
+        <p className="text-gray-700">Working Hours: 9 AM - 6 PM (Mon-Sat)</p>
       </div>
-    </nav>
+      
+      <div className="mt-6">
+        <h2 className="text-2xl font-semibold text-green-600">FAQs</h2>
+        <ul className="mt-2 text-gray-700">
+          <li>• How to book a ticket?</li>
+          <li>• How to check PNR status?</li>
+          <li>• How to cancel a booking?</li>
+        </ul>
+      </div>
+    </div>
   );
 };
 
-export default Navbar;
+export default Support;
