@@ -1,9 +1,13 @@
-import React from 'react'
+import React from 'react';
+import Booking from "./pages/Booking/Booking"; 
 
-const App = () => {
+function App() {
   return (
-    <div>App</div>
+  <>
+    <Booking/>
+    </>
   )
+  
 }
 
 export default App
