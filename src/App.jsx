@@ -5,6 +5,7 @@ import Home from "./views/Home";
 import TrainDetails from "./views/TrainSearch/TrainDetails";
 import SupportView from "./views/support/SupportView";
 import Booking from "./views/Booking/Booking";
+import PassengerForm from "./views/Booking/PassengerDetails";
 
 
 // Import Support Page
@@ -18,6 +19,7 @@ const App = () => {
         <Route path="/train-details" element={<TrainDetails />} /> {/* Train Details Page */}
         <Route path="/support" element={<SupportView />} />{/* Support Page */}
         <Route path="/booking" element={<Booking />} />
+        <Route path="/passenger-details" element={<PassengerForm />} />
       </Routes>
 
     </Router>
