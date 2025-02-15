@@ -21,7 +21,7 @@ const TrainExplorer = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center bg-gray-100 p-6">
-      <h1 className="text-3xl font-bold mb-8 mt-20">Train Explorer</h1>
+      <h1 className="text-3xl font-bold mb-8 mt-20 text-green-800">Train Explorer</h1>
 
       {/* Search & Filter Section */}
       <div className="flex w-full gap-6 flex-wrap justify-center">
