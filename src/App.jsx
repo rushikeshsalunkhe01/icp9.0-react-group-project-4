@@ -9,6 +9,7 @@ import SupportView from "./views/support/SupportView";
 import Booking from "./views/Booking/Booking";
 import PassengerForm from "./views/Booking/PassengerDetails";
 import FAQs from "./views/support/FAQs"; 
+import Payment from "./views/Booking/Payment";
 
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
         <Route path="/passenger-details" element={<PassengerForm />} />
        <Route path="/support" element={<SupportView />} /> {/* Support Page */}
         <Route path="/faqs" element={<FAQs />} /> {/* FAQs Page */}
+        <Route path="/payment" element={<Payment />} />
 
       </Routes>
       <Footer/>
