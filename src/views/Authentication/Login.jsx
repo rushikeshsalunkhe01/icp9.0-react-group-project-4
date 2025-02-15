@@ -26,22 +26,22 @@ export default function Login() {
 
   return (
     <>
-      <div className="min-h-screen flex items-center justify-center bg-[#F8F9FA] mt-15">
+      <div className="min-h-screen flex items-center  justify-center bg-[#F8F9FA] mt-15">
 
         <div className="bg-white  rounded-xl shadow-lg w-96 flex w-250 ">
 
           <div>
-            <img src='src\assets\images\train.avif' className='h-106'></img>
+            <img src='src\assets\images\train.avif' className='h-106 rounded-l-xl'></img>
           </div>
 
-          <div className='ml-40'>
+          <div className='ml-13 p-5'>
             <h2 className="text-[32px] font-bold text-[#333333] text-center mb-4">LOGIN</h2>
             <form onSubmit={handleSubmit}>
               <div className="mb-4">
                 <label className="block text-[#333333] text-sm font-medium">User Name</label>
                 <input
                   type="text"
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#008000]"
+                  className="w-80 px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#008000]"
                   placeholder="Enter username"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
