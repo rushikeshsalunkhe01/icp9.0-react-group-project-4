@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link } from "react-router";
 import { ChevronDown, Menu, X } from "lucide-react";
-import Logo from "../assets/images/logo.png";
+import {TramFront} from "lucide-react"
 
 const Navbar = () => {
   const [dropdown, setDropdown] = useState(null);
@@ -12,33 +12,22 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-[#008000] text-white shadow-lg text-xl fixed top-0 w-full z-50">
+    <nav className="bg-[#73db73] text-green-800 shadow-lg text-xl fixed top-0 w-full z-50 font-bold">
       <div className="container mx-auto flex justify-between items-center px-6 h-20">
         
         {/* Logo */}
         <Link to="/" className="flex items-center">
-          <img src={Logo} alt="Train Booking Logo" className="h-16" />
+          <div className="flex font-bold">
+              <TramFront size={40}/>
+              <p className="italic text-2xl">TrackGo</p>
+            </div>
         </Link>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-10">
           
           {/* Train Search Dropdown */}
-          <div className="relative">
-            <button
-              onClick={() => toggleDropdown("trainSearch")}
-              className="hover:text-[#FFA500] flex items-center"
-            >
-              Train Search <ChevronDown className="ml-1" />
-            </button>
-            {dropdown === "trainSearch" && (
-              <div className="absolute bg-white text-black mt-5 w-40 shadow-lg rounded-lg">
-                <Link to="/train-search" className="block px-4 py-2 hover:bg-gray-200">Search Trains</Link>
-                <Link to="/train-filter" className="block px-4 py-2 hover:bg-gray-200">Filter Trains</Link>
-                <Link to="/train-details" className="block px-4 py-2 hover:bg-gray-200">Train Details</Link>
-              </div>
-            )}
-          </div>
+          <Link to="/train-explorer" className="hover:text-[#FFA500]">Train Explorer</Link>
 
           {/* Booking Dropdown */}
           <div className="relative">
@@ -49,10 +38,10 @@ const Navbar = () => {
               Booking <ChevronDown className="ml-1" />
             </button>
             {dropdown === "booking" && (
-              <div className="absolute bg-white text-black mt-5 w-48 shadow-lg rounded-lg">
-                <Link to="/booking" className="block px-4 py-2 hover:bg-gray-200">Book Ticket</Link>
-                <Link to="/passenger-details" className="block px-4 py-2 hover:bg-gray-200">Passenger Details</Link>
-                <Link to="/payment" className="block px-4 py-2 hover:bg-gray-200">Payment</Link>
+              <div className="absolute bg-white text-green-800 mt-5 w-48 shadow-lg rounded-lg">
+                <Link to="/booking" className="block px-4 py-2 text-lg hover:bg-gray-200">Book Ticket</Link>
+                <Link to="/passenger-details" className="block text-lg px-4 py-2 hover:bg-gray-200">Passenger Details</Link>
+                <Link to="/payment" className="block px-4 py-2 text-lg hover:bg-gray-200">Payment</Link>
               </div>
             )}
           </div>
@@ -69,9 +58,9 @@ const Navbar = () => {
               Admin Panel <ChevronDown className="ml-1" />
             </button>
             {dropdown === "admin" && (
-              <div className="absolute bg-white text-black mt-5 w-44 shadow-lg rounded-lg">
-                <Link to="/manage-users" className="block px-4 py-2 hover:bg-gray-200">Manage Users</Link>
-                <Link to="/train-schedules" className="block px-4 py-2 hover:bg-gray-200">Train Schedules</Link>
+              <div className="absolute bg-white text-green-800 mt-5 w-44 shadow-lg rounded-lg">
+                <Link to="/manage-users" className="block px-4 py-2 text-lg hover:bg-gray-200">Manage Users</Link>
+                <Link to="/train-schedules" className="block px-4 py-2 text-lg hover:bg-gray-200">Train Schedules</Link>
               </div>
             )}
           </div>
@@ -85,10 +74,9 @@ const Navbar = () => {
               Support <ChevronDown className="ml-1" />
             </button>
             {dropdown === "support" && (
-              <div className="absolute bg-white text-black mt-5 w-40 shadow-lg rounded-lg">
-                <Link to="/support" className="block px-4 py-2 hover:bg-gray-200">Support</Link>
-                <Link to="/contact-us" className="block px-4 py-2 hover:bg-gray-200">Contact Us</Link>
-                <Link to="/faqs" className="block px-4 py-2 hover:bg-gray-200">FAQs</Link>
+              <div className="absolute bg-white text-green-800 mt-5 w-40 shadow-lg rounded-lg">
+                <Link to="/support" className="block px-4 py-2 text-lg hover:bg-gray-200">Support</Link>
+                <Link to="/faqs" className="block px-4 py-2 text-lg hover:bg-gray-200">FAQs</Link>
               </div>
             )}
           </div>
@@ -119,7 +107,7 @@ const Navbar = () => {
               Support <ChevronDown className="ml-1" />
             </button>
             {dropdown === "supportMobile" && (
-              <div className="absolute bg-white text-black mt-5 w-40 shadow-lg rounded-lg">
+              <div className="absolute bg-white text-green-800 mt-5 w-40 shadow-lg rounded-lg">
                 <Link to="/support" className="block px-4 py-2 hover:bg-gray-200" onClick={() => setMobileMenu(false)}>Support</Link>
                 <Link to="/faqs" className="block px-4 py-2 hover:bg-gray-200" onClick={() => setMobileMenu(false)}>FAQs</Link>
               </div>
