@@ -41,7 +41,7 @@ export default function CreateAccount() {
     <div className="min-h-screen flex items-center justify-center  mt-33 mb-10">
       <div className="bg-white  rounded-xl shadow-lg w-250 flex">
         <div>
-          <img src='src\assets\images\train2.avif' className='h-106 rounded-l-xl'></img>
+          <img src='src\assets\images\train2.avif' className='h-175 w-130 rounded-l-xl'></img>
         </div>
         <div className='ml-10 p-5'>
           <h2 className="text-[32px] font-bold text-[#333333] text-center mb-4">CREATE ACCOUNT</h2>
@@ -51,7 +51,7 @@ export default function CreateAccount() {
               <label className="block text-[#333333] text-sm font-medium">Username</label>
               <input
                 type="text"
-                className="w-full px-4 py-2 w-200 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#008000]"
+                className=" px-4 py-2 w-90 border border-gray-300 rounded-md focus:ring-2 focus:ring-[#008000]"
                 placeholder="Enter username"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
