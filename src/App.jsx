@@ -23,7 +23,6 @@ const App = () => {
         <Route path="/booking" element={<Booking />} />
         <Route path="/about" element={<About />} />
         <Route path="/passenger-details" element={<PassengerForm />} />
-       <Route path="/support" element={<SupportView />} /> {/* Support Page */}
         <Route path="/faqs" element={<FAQs />} /> {/* FAQs Page */}
         <Route path="/payment" element={<Payment />} />
 
