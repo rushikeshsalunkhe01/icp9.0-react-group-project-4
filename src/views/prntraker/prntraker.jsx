@@ -30,7 +30,28 @@ const PNRStatus = () => {
   };
 
   const fetchPNRStatus = async () => {
-  
+    if (pnr.length !== 10) {
+      setError("Please enter a valid 10-digit PNR number.");
+      return;
+    }
+    setError("");
+    setLoading(true);
+    localStorage.setItem("lastPNR", pnr);
+
+    setTimeout(() => {
+      const randomPassenger = passengers[Math.floor(Math.random() * passengers.length)];
+      const randomTrain = trains[Math.floor(Math.random() * trains.length)];
+
+      setStatus({
+        pnr,
+        train: randomTrain,
+        status: randomPassenger.status,
+        seat: randomPassenger.seat,
+        passengerName: randomPassenger.name,
+        departure: "10:30 AM",
+        arrival: "6:45 PM",
+      });
+
       setLoading(false);
     }, 1500);
   };
