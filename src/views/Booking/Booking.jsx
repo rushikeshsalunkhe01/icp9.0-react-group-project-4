@@ -1,0 +1,92 @@
+import { useState } from "react";
+
+export default function Booking() {
+  const [formData, setFormData] = useState({
+    from: "",
+    to: "",
+    date: "",
+    passengers: 1,
+    class: "Economy",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert(`Booking confirmed! Details: ${JSON.stringify(formData, null, 2)}`);
+  };
+
+  return (
+    <div className="max-w-md mx-auto bg-white p-6 m-10 mt-25 rounded-lg shadow-lg">
+      <h2 className="text-2xl font-bold mb-4 text-center">BOOK TICKET</h2>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div>
+          <label className="block font-medium">From</label>
+          <input
+            type="text"
+            name="from"
+            value={formData.from}
+            onChange={handleChange}
+            required
+            className="w-full p-2 border rounded-md focus:ring focus:ring-blue-300"
+          />
+        </div>
+        <div>
+          <label className="block font-medium">To</label>
+          <input
+            type="text"
+            name="to"
+            value={formData.to}
+            onChange={handleChange}
+            required
+            className="w-full p-2 border rounded-md focus:ring focus:ring-blue-300"
+          />
+        </div>
+        <div>
+          <label className="block font-medium">Date</label>
+          <input
+            type="date"
+            name="date"
+            value={formData.date}
+            onChange={handleChange}
+            required
+            className="w-full p-2 border rounded-md focus:ring focus:ring-blue-300"
+          />
+        </div>
+        <div>
+          <label className="block font-medium">Passengers</label>
+          <input
+            type="number"
+            name="passengers"
+            value={formData.passengers}
+            onChange={handleChange}
+            min="1"
+            required
+            className="w-full p-2 border rounded-md focus:ring focus:ring-blue-300"
+          />
+        </div>
+        <div>
+          <label className="block font-medium">Class</label>
+          <select
+            name="class"
+            value={formData.class}
+            onChange={handleChange}
+            className="w-full p-2 border rounded-md focus:ring focus:ring-blue-300"
+          >
+            <option value="Economy">Economy</option>
+            <option value="Business">Business</option>
+            <option value="First Class">First Class</option>
+          </select>
+        </div>
+        <button
+          type="submit"
+          className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition"
+        >
+          Book Now
+        </button>
+      </form>
+    </div>
+  );
+}
