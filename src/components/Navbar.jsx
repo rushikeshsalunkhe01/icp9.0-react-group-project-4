@@ -49,6 +49,7 @@ const Navbar = () => {
           {/* PNR Status */}
           <Link to="/pnr-status" className="hover:text-[#FFA500]">PNR Status</Link>
 
+         
           {/* Admin Panel Dropdown */}
           <div className="relative">
             <button
@@ -80,8 +81,12 @@ const Navbar = () => {
               </div>
             )}
           </div>
-        </div>
+          
+          <Link to="/login" className="hover:text-[#FFA500]">Login</Link>
 
+        </div>
+            
+            
         {/* Mobile Menu Button */}
         <div className="md:hidden">
           <button onClick={() => setMobileMenu(!mobileMenu)} className="text-white text-xl">
