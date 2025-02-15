@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const PNRInput = ({ pnr, setPnr, fetchPNRStatus, loading, error }) => {
   return (
-    <div className="mt-16">
+    <div className="mt-5">
       <motion.input
         type="text"
         value={pnr}

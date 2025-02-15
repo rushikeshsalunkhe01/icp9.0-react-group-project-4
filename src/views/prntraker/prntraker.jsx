@@ -4,7 +4,7 @@ import TrainAnimation from "../../components/PRNTraker/TrainAnimation";
 import PNRInput from "../../components/PRNTraker/PNRInput";
 import PNRResult from "../../components/PRNTraker/PNRResult";
 import { passengers, trains } from "../../data/data";
-
+import Footer from "../../components/Footer";
 const PNRStatus = () => {
   const [pnr, setPnr] = useState("");
   const [status, setStatus] = useState(null);
@@ -46,13 +46,14 @@ const PNRStatus = () => {
 
   return (
     <>
-      {/* Navbar with Small Distance */}
+    <div className="relative min-h-screen flex flex-col pb-20 ">
+      {/* Navbar */}
       <Navbar />
       <div className="mt-10"></div>
 
-      {/* Box with Top Shadow */}
-      <div className="relative flex flex-col justify-center items-center min-h-screen px-4">
-        <div className="bg-white shadow-2xl rounded-lg p-6 w-full max-w-lg text-center relative">
+      {/* Centered Box */}
+      <div className="flex flex-col justify-center items-center flex-grow px-4">
+        <div className="bg-white shadow-xl rounded-lg p-6 w-full max-w-lg text-center relative">
           
           {/* Top Shadow Effect */}
           <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-b from-gray-400 to-transparent rounded-t-lg"></div>
@@ -63,11 +64,15 @@ const PNRStatus = () => {
         </div>
       </div>
 
-      {/* Train Animation at Bottom with Track Line */}
-      <div className="relative w-full mt-10">
+      {/* Train Below the Box */}
+      <div className="mt-10">
         <TrainAnimation />
         <div className="w-full h-2 bg-gray-700 mt-1"></div> {/* Track Line */}
       </div>
+
+      
+    </div>
+    
     </>
   );
 };
