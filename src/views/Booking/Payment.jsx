@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import toast, { Toaster } from 'react-hot-toast';
 
 const Payment = () => {
   const [formData, setFormData] = useState({
@@ -17,12 +18,12 @@ const Payment = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Payment Successful!");
+    toast.success("Payment Successful!");
   };
 
   return (
     <div className="w-150 mx-auto m-10 mt-25 p-6 bg-white shadow-lg rounded-lg border  border-gray-300">
-      <h2 className="text-xl font-bold mb-4">Train Ticket Payment</h2>
+      <h2 className="text-2xl  text-center font-bold mb-4">Train Ticket Payment</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label className="block font-medium">Full Name</label>
@@ -60,6 +61,7 @@ const Payment = () => {
           </div>
         </div>
         <button type="submit" className="w-full bg-green-600 text-white p-2 rounded hover:bg-green-700">Pay Now</button>
+        <Toaster/>
       </form>
     </div>
   );
