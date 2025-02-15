@@ -25,6 +25,7 @@ export default function Login() {
   };
 
   return (
+    <>
     <div className="min-h-screen flex items-center justify-center bg-[#F8F9FA] mt-15">
       <div className="bg-white p-8 rounded-xl shadow-lg w-96">
         <h2 className="text-[32px] font-bold text-[#333333] text-center mb-4">LOGIN</h2>
@@ -77,6 +78,10 @@ export default function Login() {
           </button>
         </div>
       </div>
+      <div>
+        <img src=''></img>
+      </div>
     </div>
+    </>
   );
 }

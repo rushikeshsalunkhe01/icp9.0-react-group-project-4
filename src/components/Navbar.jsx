@@ -49,6 +49,7 @@ const Navbar = () => {
           {/* PNR Status */}
           <Link to="/pnr-status" className="hover:text-[#FFA500]">PNR Status</Link>
 
+         
           {/* Admin Panel Dropdown */}
           <div className="relative">
             <button
@@ -80,8 +81,10 @@ const Navbar = () => {
               </div>
             )}
           </div>
-        </div>
+          
+          <Link to="/login" className="hover:text-[#FFA500]">Login</Link>
 
+<<<<<<< HEAD
         {/* Login Dropdown */}
         <div className="relative">
           <button
@@ -105,6 +108,11 @@ const Navbar = () => {
           )}
         </div>
 
+=======
+        </div>
+            
+            
+>>>>>>> e07810e905de8cb706ec37fd8eee1b42f07eb0db
         {/* Mobile Menu Button */}
         <div className="md:hidden">
           <button onClick={() => setMobileMenu(!mobileMenu)} className="text-white text-xl">

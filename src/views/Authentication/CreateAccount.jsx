@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 export default function CreateAccount() {
   const [username, setUsername] = useState('');
   const [fullname, setFullname] = useState('');
@@ -10,36 +9,16 @@ export default function CreateAccount() {
   const [mobile, setMobile] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate();
-
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Validate inputs
     if (!username || !fullname || !password || !confirmPassword || !email || !mobile) {
       setError('Please fill all fields.');
       return;
     }
-
     if (password !== confirmPassword) {
       setError('Passwords do not match.');
       return;
     }
-
-    // Validate email format
-    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-    if (!emailRegex.test(email)) {
-      setError('Please enter a valid email address.');
-      return;
-    }
-
-    // Validate mobile number format (example: (123) 456-7890 or 1234567890)
-    const mobileRegex = /^[0-9]{10}$/;
-    if (!mobileRegex.test(mobile)) {
-      setError('Please enter a valid mobile number.');
-      return;
-    }
-
-    // Check if username or email already exists
     const storedUsers = JSON.parse(localStorage.getItem('users')) || [];
     const isUsernameTaken = storedUsers.some(user => user.username === username);
     const isEmailTaken = storedUsers.some(user => user.email === email);
@@ -51,24 +30,19 @@ export default function CreateAccount() {
       setError('Email is already registered.');
       return;
     }
-
-    // Store new user data
     const newUser = { username, fullname, password, email, mobile };
     storedUsers.push(newUser);
     localStorage.setItem('users', JSON.stringify(storedUsers));
-
     alert('Account created successfully!');
     localStorage.setItem('loggedInUser', JSON.stringify(newUser));
     navigate('/home');
   };
-
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#F8F9FA] mt-33">
+    <div className="min-h-screen flex items-center justify-center  mt-33 mb-10">
       <div className="bg-white p-8 rounded-xl shadow-lg w-96">
         <h2 className="text-[32px] font-bold text-[#333333] text-center mb-4">CREATE ACCOUNT</h2>
         <form onSubmit={handleSubmit}>
           {error && <div className="text-red-500 text-center mb-4">{error}</div>}
-
           <div className="mb-4">
             <label className="block text-[#333333] text-sm font-medium">Username</label>
             <input
@@ -79,7 +53,6 @@ export default function CreateAccount() {
               onChange={(e) => setUsername(e.target.value)}
             />
           </div>
-
           <div className="mb-4">
             <label className="block text-[#333333] text-sm font-medium">Full Name</label>
             <input
@@ -90,7 +63,6 @@ export default function CreateAccount() {
               onChange={(e) => setFullname(e.target.value)}
             />
           </div>
-
           <div className="mb-4">
             <label className="block text-[#333333] text-sm font-medium">Email</label>
             <input
@@ -101,7 +73,6 @@ export default function CreateAccount() {
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-
           <div className="mb-4">
             <label className="block text-[#333333] text-sm font-medium">Mobile Number</label>
             <input
@@ -112,7 +83,6 @@ export default function CreateAccount() {
               onChange={(e) => setMobile(e.target.value)}
             />
           </div>
-
           <div className="mb-4">
             <label className="block text-[#333333] text-sm font-medium">Password</label>
             <input
@@ -123,7 +93,6 @@ export default function CreateAccount() {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-
           <div className="mb-4">
             <label className="block text-[#333333] text-sm font-medium">Confirm Password</label>
             <input
@@ -134,7 +103,6 @@ export default function CreateAccount() {
               onChange={(e) => setConfirmPassword(e.target.value)}
             />
           </div>
-
           <div className="mb-4">
             <button
               type="submit"
@@ -144,7 +112,6 @@ export default function CreateAccount() {
             </button>
           </div>
         </form>
-
         <div className="flex justify-between mt-4">
           <button 
             className="w-[45%] bg-[#004080] text-white py-2 rounded-lg hover:bg-blue-800"

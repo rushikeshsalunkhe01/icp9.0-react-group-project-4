@@ -15,6 +15,9 @@ import TrainDetails from "./views/TrainSearch/TrainDetails";
 import PassengerForm from "./views/Booking/PassengerDetails";
 import FAQs from "./views/support/FAQs"; 
 import Payment from "./views/Booking/Payment";
+import Login from "./views/Authentication/Login";
+import CreateAccount from "./views/Authentication/CreateAccount";
+import ForgotAccount from "./views/Authentication/ForgotAccount";
 
 const App = () => {
   return (
@@ -33,6 +36,12 @@ const App = () => {
         <Route path="/faqs" element={<FAQs />} />
         <Route path="/train-explorer/train-detail/:id" element={<TrainDetails />} />
         <Route path="/payment" element={<Payment />} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/register" element={<CreateAccount/>} />
+        <Route path="/forgot-account" element={<ForgotAccount/>} />
+        
+        
+
       </Routes>
       <Footer />
     </Router>
