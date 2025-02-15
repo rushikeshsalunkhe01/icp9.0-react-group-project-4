@@ -7,6 +7,7 @@ import Home from "./views/Home";
 import TrainExplorer from "./views/TrainSearch/TrainExplorer";
 import SupportView from "./views/support/SupportView";
 import Booking from "./views/Booking/Booking";
+import TrainDetails from "./views/TrainSearch/TrainDetails";
 import PassengerForm from "./views/Booking/PassengerDetails";
 import FAQs from "./views/support/FAQs"; // Imported but not used
 
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/passenger-details" element={<PassengerForm />} />
         <Route path="/support" element={<SupportView />} /> {/* Support Page */}
         <Route path="/faqs" element={<FAQs />} /> {/* FAQs Page */}
+        <Route path="/train-explorer/train-detail/:id" element={<TrainDetails />} />
       </Routes>
       <Footer/>
     </Router>
