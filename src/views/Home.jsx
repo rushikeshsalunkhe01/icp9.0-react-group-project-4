@@ -1,5 +1,5 @@
 import React from "react";
-import Coursel from "../components/Coursel"; 
+import Coursel from "../components/coursole"; 
 
 const destinations = [
   {
@@ -79,7 +79,8 @@ const AboutSection = () => {
 const Home = () => {
   return (
     <div>
-      <Coursel />
+      <h1 className="text-8xl"></h1>
+      <Coursel/>
       <div className="container mx-auto p-4">
         <h1 className="text-3xl font-semibold mb-4">Popular Destinations</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
