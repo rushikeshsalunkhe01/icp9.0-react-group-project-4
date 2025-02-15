@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router"; 
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import About from "./views/About";
@@ -7,8 +7,10 @@ import Home from "./views/Home";
 import TrainExplorer from "./views/TrainSearch/TrainExplorer";
 import SupportView from "./views/support/SupportView";
 import Booking from "./views/Booking/Booking";
+import TrainDetails from "./views/TrainSearch/TrainDetails";
 import PassengerForm from "./views/Booking/PassengerDetails";
-import FAQs from "./views/support/FAQs"; // Imported but not used
+import FAQs from "./views/support/FAQs"; 
+import Payment from "./views/Booking/Payment";
 
 const App = () => {
   return (
@@ -21,10 +23,11 @@ const App = () => {
         <Route path="/booking" element={<Booking />} />
         <Route path="/about" element={<About />} />
         <Route path="/passenger-details" element={<PassengerForm />} />
-        <Route path="/support" element={<SupportView />} /> {/* Support Page */}
         <Route path="/faqs" element={<FAQs />} /> {/* FAQs Page */}
+        <Route path="/train-explorer/train-detail/:id" element={<TrainDetails />} />
+        <Route path="/payment" element={<Payment />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </Router>
   );
 };
