@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
-const Support = () => {
+const FAQs = () => {
   const [faqs, setFaqs] = useState([]);
   const [expanded, setExpanded] = useState(null); // To track the expanded FAQ
+  const [showFAQs, setShowFAQs] = useState(false); // Flag to control visibility
 
   // Load FAQs from localStorage
   useEffect(() => {
@@ -40,24 +41,25 @@ const Support = () => {
     }
   };
 
+  // Toggle visibility of FAQ component
+  const toggleFAQs = () => setShowFAQs(!showFAQs);
+
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 p-6">
-      <h1 className="text-3xl font-bold text-green-700 mb-4">Support</h1>
-      <p className="text-lg text-gray-700 text-center max-w-2xl">
-        If you need any help or have any questions, feel free to reach out to our support team. 
-        We are here to assist you with your train booking experience.
-      </p>
-
-      
-
-      <div className="mt-6">
-        <h2 className="text-2xl font-semibold text-green-600">FAQs</h2>
-        <button
-          className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md"
-          onClick={handleRefresh}
-        >
-          Refresh FAQs
-        </button>
+    <div className="mt-6">
+      <h2 className="text-2xl font-semibold text-green-600">FAQs</h2>
+      <button
+        className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md"
+        onClick={handleRefresh}
+      >
+        Refresh FAQs
+      </button>
+      <button
+        className="mt-4 px-4 py-2 bg-gray-500 text-white rounded-md"
+        onClick={toggleFAQs}
+      >
+        {showFAQs ? "Hide FAQs" : "Show FAQs"}
+      </button>
+      {showFAQs && (
         <ul className="mt-2 text-gray-700">
           {faqs.map((faq, index) => (
             <li key={index} className="mt-4">
@@ -73,9 +75,9 @@ const Support = () => {
             </li>
           ))}
         </ul>
-      </div>
+      )}
     </div>
   );
 };
 
-export default Support;
+export default FAQs;
