@@ -13,7 +13,7 @@ import FAQs from "./views/support/FAQs"; // Imported but not used
 const App = () => {
   return (
     <Router>
-      <Navbar />
+      <Home />
       <Routes>
         <Route path="/" element={<Home />} /> {/* Home Page */}
         <Route path="/train-explorer" element={<TrainExplorer />} /> 
