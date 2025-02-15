@@ -46,12 +46,27 @@ const PNRStatus = () => {
 
   return (
     <>
+      {/* Navbar with Small Distance */}
       <Navbar />
-      <div className="relative max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md text-center mt-20">
+      <div className="mt-10"></div>
+
+      {/* Box with Top Shadow */}
+      <div className="relative flex flex-col justify-center items-center min-h-screen px-4">
+        <div className="bg-white shadow-2xl rounded-lg p-6 w-full max-w-lg text-center relative">
+          
+          {/* Top Shadow Effect */}
+          <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-b from-gray-400 to-transparent rounded-t-lg"></div>
+
+          <h2 className="text-2xl font-bold text-blue-800">PNR Status</h2>
+          <PNRInput pnr={pnr} setPnr={setPnr} fetchPNRStatus={fetchPNRStatus} loading={loading} error={error} />
+          <PNRResult status={status} />
+        </div>
+      </div>
+
+      {/* Train Animation at Bottom with Track Line */}
+      <div className="relative w-full mt-10">
         <TrainAnimation />
-        <h2 className="text-2xl font-bold mb-4 text-blue-800">PNR Status</h2>
-        <PNRInput pnr={pnr} setPnr={setPnr} fetchPNRStatus={fetchPNRStatus} loading={loading} error={error} />
-        <PNRResult status={status} />
+        <div className="w-full h-2 bg-gray-700 mt-1"></div> {/* Track Line */}
       </div>
     </>
   );
