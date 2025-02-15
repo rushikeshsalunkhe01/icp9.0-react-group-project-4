@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../../components/Navbar";
-import TrainAnimation from "../../components/TrainAnimation";
-import PNRInput from "../../components/PNRInput";
-import PNRResult from "../../components/PNRResult";
+import TrainAnimation from "../../components/PRNTraker/TrainAnimation";
+import PNRInput from "../../components/PRNTraker/PNRInput";
+import PNRResult from "../../components/PRNTraker/PNRResult";
 import { passengers, trains } from "../../data/data";
 
 const PNRStatus = () => {
