@@ -17,7 +17,7 @@ export default function Booking() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    toast.success("Booking confirm");
+    toast.success("Booking Confirm");
   };
 
   return (

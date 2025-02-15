@@ -17,7 +17,7 @@ export default function PassengerForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form submitted", formData);
-    toast.success("Payment succecful");
+    toast.success("Payment  succecfull");
   };
 
   return (
