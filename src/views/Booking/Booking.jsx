@@ -23,6 +23,17 @@ export default function Booking() {
     <div className="w-150 mx-auto bg-white p-6 m-10 mt-25 rounded-lg shadow-lg border border-gray-300">
       <h2 className="text-2xl font-bold mb-4 text-center">BOOK TICKET</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
+      <div>
+          <label className="block font-medium">Passenger Name</label>
+          <input
+            type="text"
+            name="from"
+            value={formData.from}
+            onChange={handleChange}
+            required
+            className="w-full p-2 border rounded-md focus:ring focus:ring-blue-300"
+          />
+        </div>
         <div>
           <label className="block font-medium">From</label>
           <input
