@@ -10,7 +10,7 @@ import PassengerForm from "./views/Booking/PassengerDetails";
 
 
 // Import Support Page
-=======
+
 import FAQs from "./views/support/FAQs"; // Imported but not used
 
 const App = () => {
@@ -31,6 +31,7 @@ const App = () => {
       </Routes>
     </Router>
   );
+  
 };
 
 export default App;
