@@ -1,5 +1,6 @@
 import React from "react";
 import {TramFront} from "lucide-react"
+import { Link } from "react-router";
 import facebook from "./../assets/images/facebook.png"
 import instagram from "./../assets/images/instagram.png"
 import twitter from "./../assets/images/twitter.png"
@@ -21,29 +22,29 @@ const Footer = () => {
 
         <div className="flex flex-col mt-4 space-y-2.5">
             <p className="font-bold">Features</p>
-          <a href="#" className="hover:text-gray-400">PNR Status</a>
-          <a href="#" className="hover:text-gray-400">Train Running Status</a>
-          <a href="#" className="hover:text-gray-400">Train Schedule</a>
+          <Link to="#" className="hover:text-gray-400">PNR Status</Link>
+          <Link to="#" className="hover:text-gray-400">Train Running Status</Link>
+          <Link to="#" className="hover:text-gray-400">Train Schedule</Link>
         </div>
 
         <div className="flex flex-col mt-4 space-y-2.5">
             <p className="font-bold">About TrackGo</p>
-          <a href="#" className="hover:text-gray-400">About Page</a>
-          <a href="#" className="hover:text-gray-400">Contact Us</a>
+          <Link to="/about" className="hover:text-gray-400">About Page</Link>
+          <Link to="#" className="hover:text-gray-400">Contact Us</Link>
         </div>
 
         <div className="flex flex-col mt-4 space-y-2.5">
             <p className="font-bold">Legal</p>
-          <a href="#" className="hover:text-gray-400">Privacy Policy</a>
-          <a href="#" className="hover:text-gray-400">Terms of Conditions</a>
+          <Link to="#" className="hover:text-gray-400">Privacy Policy</Link>
+          <Link to="#" className="hover:text-gray-400">Terms of Conditions</Link>
         </div>
 
         <div className="flex flex-col mt-4 space-y-2.5">
             <p className="font-bold">Follow Us</p>
             <div className="flex flex-row space-x-3">
-                <a href="#"> <img src={instagram} alt="" className="w-8"/></a>
-                <a href="#"> <img src={facebook} alt="" className="w-8"/></a>
-                <a href="#"> <img src={twitter} alt="" className="w-8"/></a>
+                <Link to="#"> <img src={instagram} alt="" className="w-8"/></Link>
+                <Link to="#"> <img src={facebook} alt="" className="w-8"/></Link>
+                <Link to="#"> <img src={twitter} alt="" className="w-8"/></Link>
             </div>
         </div>
 
