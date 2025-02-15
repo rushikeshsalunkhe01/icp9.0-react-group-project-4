@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router"; 
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import Home from "./views/Home";
 import TrainExplorer from "./views/TrainSearch/TrainExplorer";
 import SupportView from "./views/support/SupportView";
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/support" element={<SupportView />} /> {/* Support Page */}
         <Route path="/faqs" element={<FAQs />} /> {/* FAQs Page */}
       </Routes>
+      <Footer/>
     </Router>
   );
 };
