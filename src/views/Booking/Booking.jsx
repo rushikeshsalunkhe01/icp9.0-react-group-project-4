@@ -32,7 +32,7 @@ export default function Booking() {
             value={formData.passengername}
             onChange={handleChange}
             required
-            className="w-full p-2 border rounded-md focus:ring focus:ring-blue-300"
+            className="w-full p-2 border rounded-md "
           />
         </div>
         <div>
@@ -43,7 +43,7 @@ export default function Booking() {
             value={formData.from}
             onChange={handleChange}
             required
-            className="w-full p-2 border rounded-md focus:ring focus:ring-blue-300 "
+            className="w-full p-2 border rounded-md  "
           />
         </div>
         <div>
@@ -54,7 +54,7 @@ export default function Booking() {
             value={formData.to}
             onChange={handleChange}
             required
-            className="w-full p-2 border rounded-md focus:ring focus:ring-blue-300"
+            className="w-full p-2 border rounded-md "
           />
         </div>
         <div>
@@ -65,7 +65,7 @@ export default function Booking() {
             value={formData.date}
             onChange={handleChange}
             required
-            className="w-full p-2 border rounded-md focus:ring focus:ring-blue-300"
+            className="w-full p-2 border rounded-md "
           />
         </div>
         <div>
@@ -77,7 +77,7 @@ export default function Booking() {
             onChange={handleChange}
             min="1"
             required
-            className="w-full p-2 border rounded-md focus:ring focus:ring-blue-300"
+            className="w-full p-2 border rounded-md "
           />
         </div>
         <div>
@@ -86,7 +86,7 @@ export default function Booking() {
             name="class"
             value={formData.class}
             onChange={handleChange}
-            className="w-full p-2 border rounded-md focus:ring focus:ring-blue-300"
+            className="w-full p-2 border rounded-md "
           >
             <option value="Economy">Economy</option>
             <option value="Business">Business</option>
