@@ -78,10 +78,12 @@ export default function Login() {
           </button>
         </div>
       </div>
+
       <div>
         <img src=''></img>
       </div>
-    </div>
+      
+          </div>
     </>
   );
 }
