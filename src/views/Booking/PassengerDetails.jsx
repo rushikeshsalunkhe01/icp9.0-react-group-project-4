@@ -1,4 +1,5 @@
 import { useState } from "react";
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function PassengerForm() {
   const [formData, setFormData] = useState({
@@ -16,26 +17,27 @@ export default function PassengerForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form submitted", formData);
+    toast.success("Payment succecful");
   };
 
   return (
-    <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-lg mt-10">
-      <h2 className="text-xl font-semibold text-center mb-4">Passenger Details</h2>
+    <div className="w-150 m-10 mt-25 mx-auto bg-white p-6 rounded-lg shadow-lg border border-gray-300">
+      <h2 className="text-2xl font-bold text-center mb-4">Passenger Details</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label className="block text-gray-700">Name</label>
+          <label className="block font-medium">Name</label>
           <input type="text" name="name" value={formData.name} onChange={handleChange} required
             className="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" />
         </div>
 
         <div>
-          <label className="block text-gray-700">Age</label>
+          <label className="block font-medium">Age</label>
           <input type="number" name="age" value={formData.age} onChange={handleChange} required
             className="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" />
         </div>
 
         <div>
-          <label className="block text-gray-700">Gender</label>
+          <label className="block font-medium">Gender</label>
           <select name="gender" value={formData.gender} onChange={handleChange} required
             className="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
             <option value="">Select</option>
@@ -46,13 +48,13 @@ export default function PassengerForm() {
         </div>
 
         <div>
-          <label className="block text-gray-700">ID Proof</label>
+          <label className="block font-medium">ID Proof</label>
           <input type="text" name="idProof" value={formData.idProof} onChange={handleChange} required
             className="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" />
         </div>
 
         <div>
-          <label className="block text-gray-700">Seat Preference</label>
+          <label className="block font-medium">Seat Preference</label>
           <select name="seatPreference" value={formData.seatPreference} onChange={handleChange} required
             className="w-full p-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400">
             <option value="">Select</option>
@@ -63,6 +65,7 @@ export default function PassengerForm() {
         </div>
 
         <button type="submit" className="w-full bg-green-600 text-white p-2 rounded-md hover:bg-green-700 transition">Submit</button>
+        <Toaster/>
       </form>
     </div>
   );
