@@ -4,7 +4,7 @@ import toast, { Toaster } from 'react-hot-toast';
 const Payment = () => {
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
+    email: "",    
     train: "",
     date: "",
     cardNumber: "",
@@ -21,7 +21,7 @@ const Payment = () => {
     toast.success("Payment Successful!");
   };
 
-  return (
+  return ( 
     <div className="w-150 mx-auto m-10 mt-25 p-6 bg-white shadow-lg rounded-lg border border-gray-300">
       <h2 className="text-2xl  text-center font-bold mb-4">TRAIN TICKET PAYMENT</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
