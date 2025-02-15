@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { ChevronDown, Menu, X } from "lucide-react";
 import Logo from "../assets/images/logo.png";
 
@@ -24,21 +24,7 @@ const Navbar = () => {
         <div className="hidden md:flex space-x-10">
           
           {/* Train Search Dropdown */}
-          <div className="relative">
-            <button
-              onClick={() => toggleDropdown("trainSearch")}
-              className="hover:text-[#FFA500] flex items-center"
-            >
-              Train Search <ChevronDown className="ml-1" />
-            </button>
-            {dropdown === "trainSearch" && (
-              <div className="absolute bg-white text-black mt-5 w-40 shadow-lg rounded-lg">
-                <Link to="/train-search" className="block px-4 py-2 hover:bg-gray-200">Search Trains</Link>
-                <Link to="/train-filter" className="block px-4 py-2 hover:bg-gray-200">Filter Trains</Link>
-                <Link to="/train-details" className="block px-4 py-2 hover:bg-gray-200">Train Details</Link>
-              </div>
-            )}
-          </div>
+          <Link to="/train-explorer" className="hover:text-[#FFA500]">Train Explorer</Link>
 
           {/* Booking Dropdown */}
           <div className="relative">
@@ -87,7 +73,6 @@ const Navbar = () => {
             {dropdown === "support" && (
               <div className="absolute bg-white text-black mt-5 w-40 shadow-lg rounded-lg">
                 <Link to="/support" className="block px-4 py-2 hover:bg-gray-200">Support</Link>
-                <Link to="src\views\support\FAQs.jsx" className="block px-4 py-2 hover:bg-gray-200">FAQs</Link>
                 <Link to="/faqs" className="block px-4 py-2 hover:bg-gray-200">FAQs</Link>
               </div>
             )}
