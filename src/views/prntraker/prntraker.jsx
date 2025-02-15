@@ -46,7 +46,7 @@ const PNRStatus = () => {
 
   return (
     <>
-    <div className="relative min-h-screen flex flex-col pb-20 ">
+    <div className="relative min-h-screen flex flex-col pb-20">
       {/* Navbar */}
       <Navbar />
       <div className="mt-10"></div>
@@ -72,7 +72,7 @@ const PNRStatus = () => {
 
       
     </div>
-    
+   <Footer />
     </>
   );
 };
