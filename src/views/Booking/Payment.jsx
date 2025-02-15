@@ -23,7 +23,7 @@ const Payment = () => {
 
   return (
     <div className="w-150 mx-auto m-10 mt-25 p-6 bg-white shadow-lg rounded-lg border border-gray-300">
-      <h2 className="text-2xl  text-center font-bold mb-4">Train Ticket Payment</h2>
+      <h2 className="text-2xl  text-center font-bold mb-4">TRAIN TICKET PAYMENT</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label className="block font-medium">Full Name</label>

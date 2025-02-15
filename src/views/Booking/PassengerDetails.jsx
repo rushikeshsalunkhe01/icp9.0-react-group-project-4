@@ -22,7 +22,7 @@ export default function PassengerForm() {
 
   return (
     <div className="w-150 m-10 mt-25 mx-auto bg-white p-6 rounded-lg shadow-lg border border-gray-300">
-      <h2 className="text-2xl font-bold text-center mb-4">Passenger Details</h2>
+      <h2 className="text-2xl font-bold text-center mb-4">PASSENGER DETAILS</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label className="block font-medium">Name</label>
