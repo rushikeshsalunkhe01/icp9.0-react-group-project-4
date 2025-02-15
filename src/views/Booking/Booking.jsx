@@ -1,4 +1,5 @@
 import { useState } from "react";
+import toast, { Toaster } from 'react-hot-toast';
 
 export default function Booking() {
   const [formData, setFormData] = useState({
@@ -15,11 +16,11 @@ export default function Booking() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(`Booking confirmed! Details: ${JSON.stringify(formData, null, 2)}`);
+    toast.success("Booking confirm");
   };
 
   return (
-    <div className="max-w-md mx-auto bg-white p-6 m-10 mt-25 rounded-lg shadow-lg">
+    <div className="w-150 mx-auto bg-white p-6 m-10 mt-25 rounded-lg shadow-lg border border-gray-300">
       <h2 className="text-2xl font-bold mb-4 text-center">BOOK TICKET</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
@@ -82,11 +83,13 @@ export default function Booking() {
         </div>
         <button
           type="submit"
-          className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition"
+          className="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700 transition"
         >
           Book Now
         </button>
+        <Toaster/>
       </form>
     </div>
+     
   );
 }
