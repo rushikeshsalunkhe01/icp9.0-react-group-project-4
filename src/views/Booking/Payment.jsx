@@ -1,14 +1,16 @@
 import { useState } from "react";
-import toast, { Toaster } from 'react-hot-toast';
 
-export default function Booking() {
+export default function Payment(){
   const [formData, setFormData] = useState({
-    passengername: "",
     from: "",
     to: "",
     date: "",
     passengers: 1,
     class: "Economy",
+    paymentMethod: "Credit Card",
+    cardNumber: "",
+    cardExpiry: "",
+    cardCVC: "",
   });
 
   const handleChange = (e) => {
@@ -17,24 +19,13 @@ export default function Booking() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    toast.success("Booking confirm");
+    alert(`Booking confirmed! Payment Successful! Details: ${JSON.stringify(formData, null, 2)}`);
   };
 
   return (
-    <div className="w-150 mx-auto bg-white p-6 m-10 mt-25 rounded-lg shadow-lg border border-gray-300">
-      <h2 className="text-2xl font-bold mb-4 text-center">BOOK TICKET</h2>
+    <div className="w-150 mt-25 mx-auto bg-white p-6 rounded-lg shadow-lg">
+      <h2 className="text-2xl font-bold mb-4 text-center">Train Booking</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
-      <div>
-          <label className="block font-medium">Passenger Name</label>
-          <input
-            type="text"
-            name="passengername"
-            value={formData.passengername}
-            onChange={handleChange}
-            required
-            className="w-full p-2 border rounded-md focus:ring focus:ring-blue-300"
-          />
-        </div>
         <div>
           <label className="block font-medium">From</label>
           <input
@@ -43,7 +34,7 @@ export default function Booking() {
             value={formData.from}
             onChange={handleChange}
             required
-            className="w-full p-2 border rounded-md focus:ring focus:ring-blue-300 "
+            className="w-full p-2 border rounded-md focus:ring focus:ring-blue-300"
           />
         </div>
         <div>
@@ -93,15 +84,64 @@ export default function Booking() {
             <option value="First Class">First Class</option>
           </select>
         </div>
+        <h3 className="text-xl font-bold mt-4">Payment Details</h3>
+        <div>
+          <label className="block font-medium">Payment Method</label>
+          <select
+            name="paymentMethod"
+            value={formData.paymentMethod}
+            onChange={handleChange}
+            className="w-full p-2 border rounded-md focus:ring focus:ring-blue-300"
+          >
+            <option value="Credit Card">Credit Card</option>
+            <option value="Debit Card">Debit Card</option>
+            <option value="PayPal">PayPal</option>
+          </select>
+        </div>
+        {formData.paymentMethod !== "PayPal" && (
+          <>
+            <div>
+              <label className="block font-medium">Card Number</label>
+              <input
+                type="text"
+                name="cardNumber"
+                value={formData.cardNumber}
+                onChange={handleChange}
+                required
+                className="w-full p-2 border rounded-md focus:ring focus:ring-blue-300"
+              />
+            </div>
+            <div>
+              <label className="block font-medium">Expiry Date</label>
+              <input
+                type="text"
+                name="cardExpiry"
+                value={formData.cardExpiry}
+                onChange={handleChange}
+                required
+                className="w-full p-2 border rounded-md focus:ring focus:ring-blue-300"
+              />
+            </div>
+            <div>
+              <label className="block font-medium">CVC</label>
+              <input
+                type="text"
+                name="cardCVC"
+                value={formData.cardCVC}
+                onChange={handleChange}
+                required
+                className="w-full p-2 border rounded-md focus:ring focus:ring-blue-300"
+              />
+            </div>
+          </>
+        )}
         <button
           type="submit"
           className="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700 transition"
         >
-          Book Now
+          Confirm & Pay
         </button>
-        <Toaster/>
       </form>
     </div>
-     
   );
 }
