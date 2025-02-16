@@ -4,10 +4,10 @@ import TrainDetailsCard from "../../components/TrainDetailsCard";
 
 const TrainExplorer = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [searchBy, setSearchBy] = useState("name"); // Default search by name
-  const [trainType, setTrainType] = useState(""); // Filtering by train type
+  const [searchBy, setSearchBy] = useState("name"); 
+  const [trainType, setTrainType] = useState(""); 
 
-  // Function to filter trains based on search & filter
+
   const filteredTrains = trainData.filter((train) => {
     const matchesSearch =
       searchTerm === "" ||
@@ -23,9 +23,7 @@ const TrainExplorer = () => {
     <div className="min-h-screen flex flex-col items-center bg-gray-100 p-6">
       <h1 className="md:text-3xl text-xl font-bold md:mb-8 mb-3 mt-20 text-green-800">Train Explorer</h1>
 
-      {/* Search & Filter Section */}
       <div className="flex w-full gap-6 flex-wrap justify-center">
-        {/* Search Input */}
         <input
           type="text"
           placeholder={`Search by train ${searchBy}...`}
@@ -36,7 +34,7 @@ const TrainExplorer = () => {
 
         {/* Search By Dropdown */}
         <select
-          className="p-2 rounded-md border border-gray-400 sm:w-[50%] text-sm"
+          className="p-2 rounded-md border border-gray-400 text-sm"
           value={searchBy}
           onChange={(e) => setSearchBy(e.target.value)}
         >
@@ -46,7 +44,7 @@ const TrainExplorer = () => {
 
         {/* Train Type Filter Dropdown */}
         <select
-          className="p-2 rounded-md border border-gray-400 sm:w-[50%] text-sm"
+          className="p-2 rounded-md border border-gray-400 text-sm"
           value={trainType}
           onChange={(e) => setTrainType(e.target.value)}
         >
