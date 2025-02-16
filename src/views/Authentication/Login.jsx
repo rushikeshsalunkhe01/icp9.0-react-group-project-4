@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 export default function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -28,7 +28,7 @@ export default function Login() {
     <>
       <div className="min-h-screen flex items-center  justify-center bg-[#F8F9FA] mt-15">
 
-        <div className="bg-white  rounded-xl shadow-lg w-96 flex w-250 ">
+        <div className="bg-white  rounded-xl shadow-lg flex w-250 ">
 
           <div>
             <img src='src\assets\images\train.avif' className='h-106 rounded-l-xl'></img>

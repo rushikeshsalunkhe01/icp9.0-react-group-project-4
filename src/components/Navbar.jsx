@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom"; // Fixed import
+import { Link } from "react-router"; // Fixed import
 import { ChevronDown, Menu, X } from "lucide-react";
 import { TramFront } from "lucide-react";
 
@@ -38,7 +38,7 @@ const Navbar = () => {
               Booking <ChevronDown className="ml-1" />
             </button>
             {dropdown === "booking" && (
-              <div className="absolute bg-white text-green-800 mt-2 w-48 shadow-lg rounded-lg"> {/* Reduced mt-5 to mt-2 */}
+              <div className="absolute bg-white text-green-800 mt-5 w-48 shadow-lg rounded-lg"> {/* Reduced mt-5 to mt-2 */}
                 <Link to="/booking" className="block px-4 py-2 text-lg hover:bg-gray-200">Book Ticket</Link>
                 <Link to="/passenger-details" className="block text-lg px-4 py-2 hover:bg-gray-200">Passenger Details</Link>
                 <Link to="/payment" className="block px-4 py-2 text-lg hover:bg-gray-200">Payment</Link>
@@ -59,32 +59,13 @@ const Navbar = () => {
               Admin Panel <ChevronDown className="ml-1" />
             </button>
             {dropdown === "admin" && (
-              <div className="absolute bg-white text-green-800 mt-2 w-44 shadow-lg rounded-lg"> {/* Reduced mt-5 to mt-2 */}
+              <div className="absolute bg-white text-green-800 mt-5 w-44 shadow-lg rounded-lg"> {/* Reduced mt-5 to mt-2 */}
                 <Link to="/manage-users" className="block px-4 py-2 text-lg hover:bg-gray-200">Manage Users</Link>
                 <Link to="/train-schedules" className="block px-4 py-2 text-lg hover:bg-gray-200">Train Schedules</Link>
               </div>
             )}
           </div>
 
-          {/* Support Dropdown */}
-          <div className="relative">
-            <button
-              onClick={() => toggleDropdown("support")}
-              className="hover:text-[#FFA500] flex items-center"
-            >
-              Support <ChevronDown className="ml-1" />
-            </button>
-            {dropdown === "support" && (
-              <div className="absolute bg-white text-green-800 mt-2 w-40 shadow-lg rounded-lg"> {/* Reduced mt-5 to mt-2 */}
-                <Link to="/support" className="block px-4 py-2 text-lg hover:bg-gray-200">Support</Link>
-                <Link to="/faqs" className="block px-4 py-2 text-lg hover:bg-gray-200">FAQs</Link>
-              </div>
-            )}
-          </div>
-          
-          <Link to="/login" className="hover:text-[#FFA500]">Login</Link>
-
-<<<<<<< HEAD
         {/* Login Dropdown */}
         <div className="relative">
           <button
@@ -94,7 +75,7 @@ const Navbar = () => {
             Login <ChevronDown className="ml-1" />
           </button>
           {dropdown === "login" && (
-            <div className="absolute bg-white text-green-800 mt-2 w-48 shadow-lg rounded-lg"> {/* Reduced mt-5 to mt-2 */}
+            <div className="absolute bg-white text-green-800 mt-5 w-45 shadow-lg rounded-lg"> {/* Reduced mt-5 to mt-2 */}
               <Link to="/login" className="block px-4 py-2 text-lg hover:bg-gray-200">
                 Login
               </Link>
@@ -108,11 +89,23 @@ const Navbar = () => {
           )}
         </div>
 
-=======
+        {/* Support Dropdown */}
+        <div className="relative">
+            <button
+              onClick={() => toggleDropdown("support")}
+              className="hover:text-[#FFA500] flex items-center"
+            >
+              Support <ChevronDown className="ml-1" />
+            </button>
+            {dropdown === "support" && (
+              <div className="absolute bg-white text-green-800 mt-5 w-28 shadow-lg rounded-lg"> {/* Reduced mt-5 to mt-2 */}
+                <Link to="/support" className="block px-4 py-2 text-lg hover:bg-gray-200">Support</Link>
+                <Link to="/faqs" className="block px-4 py-2 text-lg hover:bg-gray-200">FAQs</Link>
+              </div>
+            )}
+          </div>
+
         </div>
-            
-            
->>>>>>> e07810e905de8cb706ec37fd8eee1b42f07eb0db
         {/* Mobile Menu Button */}
         <div className="md:hidden">
           <button onClick={() => setMobileMenu(!mobileMenu)} className="text-white text-xl">

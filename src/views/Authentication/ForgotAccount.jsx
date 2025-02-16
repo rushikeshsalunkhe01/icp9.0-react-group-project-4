@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router';
 export default function ForgotAccount() {
   const [usernameOrEmail, setUsernameOrEmail] = useState('');
   const [message, setMessage] = useState('');
