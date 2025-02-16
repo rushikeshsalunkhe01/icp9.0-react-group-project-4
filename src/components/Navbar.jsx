@@ -84,35 +84,9 @@ const Navbar = () => {
           
           <Link to="/login" className="hover:text-[#FFA500]">Login</Link>
 
-<<<<<<< HEAD
-        {/* Login Dropdown */}
-        <div className="relative">
-          <button
-            onClick={() => toggleDropdown("login")}
-            className="hover:text-[#FFA500] flex items-center"
-          >
-            Login <ChevronDown className="ml-1" />
-          </button>
-          {dropdown === "login" && (
-            <div className="absolute bg-white text-green-800 mt-2 w-48 shadow-lg rounded-lg"> {/* Reduced mt-5 to mt-2 */}
-              <Link to="/login" className="block px-4 py-2 text-lg hover:bg-gray-200">
-                Login
-              </Link>
-              <Link to="/forgot-password" className="block text-lg px-4 py-2 hover:bg-gray-200">
-                Forgot Password
-              </Link>
-              <Link to="/register" className="block px-4 py-2 text-lg hover:bg-gray-200">
-                Register
-              </Link>
-            </div>
-          )}
-        </div>
-
-=======
         </div>
             
             
->>>>>>> e07810e905de8cb706ec37fd8eee1b42f07eb0db
         {/* Mobile Menu Button */}
         <div className="md:hidden">
           <button onClick={() => setMobileMenu(!mobileMenu)} className="text-white text-xl">
