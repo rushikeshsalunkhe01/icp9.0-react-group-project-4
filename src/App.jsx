@@ -1,5 +1,8 @@
+
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router"; 
+
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import About from "./views/About.jsx";
@@ -13,9 +16,6 @@ import TrainDetails from "./views/TrainSearch/TrainDetails";
 import PassengerForm from "./views/Booking/PassengerDetails";
 import FAQs from "./views/support/FAQs"; 
 import Payment from "./views/Booking/Payment";
-import Login from "./views/Authentication/Login";
-import CreateAccount from "./views/Authentication/CreateAccount";
-import ForgotAccount from "./views/Authentication/ForgotAccount";
 
 const App = () => {
   return (
@@ -36,6 +36,7 @@ const App = () => {
         <Route path="/payment" element={<Payment />} />
         <Route path="/register" element={<CreateAccount/>} />
         <Route path="/forgot-account" element={<ForgotAccount/>} />
+
       </Routes>
       <Footer />
     </Router>

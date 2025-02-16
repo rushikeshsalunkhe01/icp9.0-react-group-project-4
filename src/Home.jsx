@@ -76,23 +76,11 @@ const AboutSection = () => {
   );
 };
 
+import React from 'react'
+
 const Home = () => {
   return (
-    <div>
-      <h1 className="text-8xl"></h1>
-      <Coursel/>
-      <div className="container mx-auto p-4">
-        <h1 className="text-3xl font-semibold mb-4">Popular Destinations</h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {destinations.map((destination) => (
-            <DestinationCard key={destination.name} destination={destination} />
-          ))}
-        </div>
-      </div>
-      <AboutSection />
-    </div>
-  );
-};
-
-export default Home;
+    <div>Home</div>
+  )
+}
 
