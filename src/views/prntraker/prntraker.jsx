@@ -46,7 +46,7 @@ const PNRStatus = () => {
   return (
     <div className="relative min-h-screen flex flex-col">
       <Navbar />
-      <div className="mt-10 flex-grow flex flex-col justify-center items-center px-4">
+      <div className="  mt-10 flex-grow flex flex-col justify-center items-center px-4">
         <div className="bg-white shadow-2xl rounded-lg p-6 w-full max-w-lg text-center">
           <h2 className="text-2xl font-bold text-blue-800">PNR Status</h2>
           <input
