@@ -7,28 +7,28 @@ const TrainDetailsCard = ({ train }) => {
 
   return (
     <Link to={`train-detail/${id}`}>
-      <div className="bg-white shadow-md rounded-xl p-4 w-[400px] h-[470px] hover:scale-105 transition-transform border border-gray-300">
+      <div className="bg-white shadow-md rounded-xl p-4 md:w-[400px] md:h-[470px] w-[300px] h-[400px] hover:scale-105 transition-transform border border-gray-300">
         <img 
             src={image} 
             alt={name} 
-            className="w-full h-[150px] object-cover rounded-lg mb-3" />
-        <h2 className="text-xl font-semibold text-center py-2">
+            className="w-full   md:h-[150px] h-[100px]  object-cover rounded-lg mb-3" />
+        <h2 className="md:text-xl text-lg font-semibold text-center py-2">
             {name}
         </h2>
-        <p className="text-gray-600">Train No: {number}</p>
-        <p>
+        <p className="text-gray-600 md:text-lg text-sm">Train No: {number}</p>
+        <p className="md:text-lg text-sm">
             <strong>Type:</strong> {type}
         </p>
-        <p>
+        <p className="md:text-lg text-sm">
             <strong>Departure:</strong> {departure}
         </p>
-        <p>
+        <p className="md:text-lg text-sm">
             <strong>Arrival:</strong> {arrival}
         </p>
-        <p>
+        <p className="md:text-lg text-sm">
             <strong>Duration:</strong> {duration}
         </p>
-        <p>
+        <p className="md:text-lg text-sm">
             <strong>Price:</strong> {price}
         </p>
         <p className={`font-semibold ${availability === "Available" ? "text-green-600" : availability === "Limited" ? "text-orange-600" : "text-red-600"}`}>

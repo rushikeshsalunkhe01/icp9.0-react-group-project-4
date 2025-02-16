@@ -8,12 +8,12 @@ import twitter from "./../assets/images/twitter.png"
 const Footer = () => {
   return (
     <footer className="bg-[#73db73] text-green-800 py-8">
-      <div className="container mx-auto flex w-[80%] mb-10 space-x-15">
+      <div className="container mx-auto flex md:flex-row flex-wrap md:w-[80%] mb-10 md:space-x-15 space-x-7 md:ml-0 pl-10 w-full sm:space-y-10">
 
-        <div className="flex flex-col items-center w-[30%] my-auto">
+        <div className="flex flex-col items-center md:w-[30%] w-[80%] my-auto ">
             <div className="flex font-bold">
-                <TramFront size={40}/>
-                <p className="italic text-2xl">TrackGo</p>
+                <TramFront size={30}/>
+                <p className="italic text-xl">TrackGo</p>
             </div>
             <p className="text-green-600 font-semibold max-w-md">
                     TrackGo is official partner of IRCTC to book IRCTC train tickets and Railway train enquiry

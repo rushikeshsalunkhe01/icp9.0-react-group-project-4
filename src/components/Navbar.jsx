@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router-dom"; // Fixed import
+import { Link } from "react-router"; 
 import { ChevronDown, Menu, X } from "lucide-react";
 import { TramFront } from "lucide-react";
 
@@ -38,7 +38,7 @@ const Navbar = () => {
               Booking <ChevronDown className="ml-1" />
             </button>
             {dropdown === "booking" && (
-              <div className="absolute bg-white text-green-800 mt-2 w-48 shadow-lg rounded-lg"> {/* Reduced mt-5 to mt-2 */}
+              <div className="absolute bg-white text-green-800 mt-5 w-48 shadow-lg rounded-lg"> {/* Reduced mt-5 to mt-2 */}
                 <Link to="/booking" className="block px-4 py-2 text-lg hover:bg-gray-200">Book Ticket</Link>
                 <Link to="/passenger-details" className="block text-lg px-4 py-2 hover:bg-gray-200">Passenger Details</Link>
                 <Link to="/payment" className="block px-4 py-2 text-lg hover:bg-gray-200">Payment</Link>
@@ -59,12 +59,38 @@ const Navbar = () => {
               Admin Panel <ChevronDown className="ml-1" />
             </button>
             {dropdown === "admin" && (
-              <div className="absolute bg-white text-green-800 mt-2 w-44 shadow-lg rounded-lg"> {/* Reduced mt-5 to mt-2 */}
+              <div className="absolute bg-white text-green-800 mt-5 w-44 shadow-lg rounded-lg"> {/* Reduced mt-5 to mt-2 */}
                 <Link to="/manage-users" className="block px-4 py-2 text-lg hover:bg-gray-200">Manage Users</Link>
                 <Link to="/train-schedules" className="block px-4 py-2 text-lg hover:bg-gray-200">Train Schedules</Link>
               </div>
             )}
           </div>
+
+        {/* Login Dropdown */}
+        <div className="relative">
+          <button
+            onClick={() => toggleDropdown("login")}
+            className="hover:text-[#FFA500] flex items-center"
+          >
+            Login <ChevronDown className="ml-1" />
+          </button>
+          {dropdown === "login" && (
+            <div className="absolute bg-white text-green-800 mt-5 w-45 shadow-lg rounded-lg"> {/* Reduced mt-5 to mt-2 */}
+              <Link to="/login" className="block px-4 py-2 text-lg hover:bg-gray-200">
+                Login
+              </Link>
+              <Link to="/forgot-password" className="block text-lg px-4 py-2 hover:bg-gray-200">
+                Forgot Password
+              </Link>
+              <Link to="/register" className="block px-4 py-2 text-lg hover:bg-gray-200">
+                Register
+              </Link>
+            </div>
+          )}
+        </div>
+
+        {/* Support Dropdown */}
+        <div className="relative">
 
           {/* Support Dropdown */}
           <div className="relative">
@@ -75,12 +101,15 @@ const Navbar = () => {
               Support <ChevronDown className="ml-1" />
             </button>
             {dropdown === "support" && (
+              <div className="absolute bg-white text-green-800 mt-5 w-28 shadow-lg rounded-lg"> {/* Reduced mt-5 to mt-2 */}
               <div className="absolute bg-white text-green-800 mt-2 w-40 shadow-lg rounded-lg"> {/* Reduced mt-5 to mt-2 */}
                 <Link to="/support" className="block px-4 py-2 text-lg hover:bg-gray-200">Support</Link>
                 <Link to="/faqs" className="block px-4 py-2 text-lg hover:bg-gray-200">FAQs</Link>
               </div>
             )}
           </div>
+        </div>
+
           
           <Link to="/login" className="hover:text-[#FFA500]">Login</Link>
 
@@ -97,13 +126,25 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {mobileMenu && (
-        <div className="md:hidden bg-[#008000] text-white flex flex-col space-y-3 p-4"> {/* Reduced space-y-4 to space-y-3 */}
+        <div className="md:hidden bg-[#73db73] text-green-800 flex flex-col space-y-7 p-4"> {/* Reduced space-y-4 to space-y-3 */}
           <Link to="/train-explorer" className="hover:text-[#FFA500]" onClick={() => setMobileMenu(false)}>
             Train Explorer
           </Link>
-          <Link to="/booking" className="hover:text-[#FFA500]" onClick={() => setMobileMenu(false)}>
-            Booking
-          </Link>
+          <div className="relative">
+            <button
+              onClick={() => toggleDropdown("booking")}
+              className="hover:text-[#FFA500] flex items-center"
+            >
+              Booking <ChevronDown className="ml-1" />
+            </button>
+            {dropdown === "booking" && (
+              <div className="absolute bg-white text-green-800 mt-5 w-48 shadow-lg rounded-lg"> {/* Reduced mt-5 to mt-2 */}
+                <Link to="/booking" className="block px-4 py-2 text-lg hover:bg-gray-200">Book Ticket</Link>
+                <Link to="/passenger-details" className="block text-lg px-4 py-2 hover:bg-gray-200">Passenger Details</Link>
+                <Link to="/payment" className="block px-4 py-2 text-lg hover:bg-gray-200">Payment</Link>
+              </div>
+            )}
+          </div>
           <Link to="/pnr-status" className="hover:text-[#FFA500]" onClick={() => setMobileMenu(false)}>
             PNR Status
           </Link>
