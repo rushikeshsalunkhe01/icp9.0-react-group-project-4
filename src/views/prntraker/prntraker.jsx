@@ -46,7 +46,9 @@ const PNRStatus = () => {
   return (
     <div className="relative min-h-screen flex flex-col">
       <Navbar />
-      <div className="mt-10 flex-grow flex flex-col justify-center items-center px-4 md:px-8">
+
+      {/* Main Container with Extra Margin for Small Screens */}
+      <div className="mt-20 flex-grow flex flex-col justify-center items-center px-4 md:px-8">
         <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-md sm:max-w-lg lg:max-w-xl text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-blue-800 mb-4">PNR Status</h2>
           <input
@@ -65,7 +67,7 @@ const PNRStatus = () => {
             {loading ? "Checking..." : "Check Status"}
           </button>
           {status && (
-            <div className="mt-5 p-4 bg-gray-100 rounded-lg border border-gray-300 text-left text-lg">
+            <div className="mt-4 p-4 bg-gray-100 rounded-lg border border-gray-300">
               <p><strong>Passenger:</strong> {status.passenger}</p>
               <p><strong>Train:</strong> {status.train} ({status.type})</p>
               <p><strong>Status:</strong> {status.status}</p>
@@ -76,14 +78,14 @@ const PNRStatus = () => {
           )}
         </div>
       </div>
-      
-      {/* Train Animation and Track */}
-      <div className="relative w-full mt-10">
+
+      {/* Train Animation (Hidden on Small Devices, Visible on Large Devices) */}
+      <div className="relative mt-10 hidden  mb-1 md:block">
         <TrainAnimation />
-        <div className="w-full h-2 bg-gray-700 mt-2"></div> {/* Track Line */}
+        <div className="w-full h-1 bg-gray-700 mt-1"></div> {/* Track Line */}
       </div>
 
-      <Footer className="mt-10" />
+      <Footer className=" mt-10" /> {/* Add margin-top to the Footer */}
     </div>
   );
 };
