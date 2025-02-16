@@ -91,6 +91,9 @@ const Navbar = () => {
 
         {/* Support Dropdown */}
         <div className="relative">
+
+          {/* Support Dropdown */}
+          <div className="relative">
             <button
               onClick={() => toggleDropdown("support")}
               className="hover:text-[#FFA500] flex items-center"
@@ -99,6 +102,7 @@ const Navbar = () => {
             </button>
             {dropdown === "support" && (
               <div className="absolute bg-white text-green-800 mt-5 w-28 shadow-lg rounded-lg"> {/* Reduced mt-5 to mt-2 */}
+              <div className="absolute bg-white text-green-800 mt-2 w-40 shadow-lg rounded-lg"> {/* Reduced mt-5 to mt-2 */}
                 <Link to="/support" className="block px-4 py-2 text-lg hover:bg-gray-200">Support</Link>
                 <Link to="/faqs" className="block px-4 py-2 text-lg hover:bg-gray-200">FAQs</Link>
               </div>
@@ -106,6 +110,12 @@ const Navbar = () => {
           </div>
         </div>
 
+          
+          <Link to="/login" className="hover:text-[#FFA500]">Login</Link>
+
+        </div>
+            
+            
         {/* Mobile Menu Button */}
         <div className="md:hidden">
           <button onClick={() => setMobileMenu(!mobileMenu)} className="text-white text-xl">
