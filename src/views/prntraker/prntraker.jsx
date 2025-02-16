@@ -13,6 +13,7 @@ const PNRStatus = () => {
   const [error, setError] = useState("");
 
   useEffect(() => {
+    console.log("PNRStatus component mounted");
     const lastPNR = localStorage.getItem("lastPNR");
     if (lastPNR) setPnr(lastPNR);
   }, []);
@@ -48,26 +49,19 @@ const PNRStatus = () => {
   return (
     <>
       <div className="relative min-h-screen flex flex-col pb-20">
-        {/* Navbar */}
         <Navbar />
         <div className="mt-10"></div>
-
-        {/* Centered Box */}
         <div className="flex flex-col justify-center items-center flex-grow px-4">
           <div className="bg-white shadow-xl rounded-lg p-6 w-full max-w-lg text-center relative">
-            {/* Top Shadow Effect */}
             <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-b from-gray-400 to-transparent rounded-t-lg"></div>
-
             <h2 className="text-2xl font-bold text-blue-800">PNR Status</h2>
             <PNRInput pnr={pnr} setPnr={setPnr} fetchPNRStatus={fetchPNRStatus} loading={loading} error={error} />
             <PNRResult status={status} />
           </div>
         </div>
-
-        {/* Train Below the Box */}
         <div className="mt-10">
           <TrainAnimation />
-          <div className="w-full h-2 bg-gray-700 mt-1"></div> {/* Track Line */}
+          <div className="w-full h-2 bg-gray-700 mt-1"></div>
         </div>
       </div>
       <Footer />
