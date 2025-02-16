@@ -10,8 +10,9 @@ import Home from "./Home.jsx";
 import TrainExplorer from "./views/TrainSearch/TrainExplorer";
 import SupportView from "./views/support/SupportView";
 import Booking from "./views/Booking/Booking";
-// import RegisterForm from "./views/auth/Register"; 
-// import ForgotAccDetails from "./views/auth/ForgateAccDetails"; 
+import RegisterForm from "./views/auth/Register"; 
+import LoginForm from "./views/auth/Login"; 
+import ForgotAccDetails from "./views/auth/ForgateAccDetails"; 
 import TrainDetails from "./views/TrainSearch/TrainDetails";
 import PassengerForm from "./views/Booking/PassengerDetails";
 import FAQs from "./views/support/FAQs"; 
@@ -25,15 +26,16 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/train-explorer" element={<TrainExplorer />} /> 
         <Route path="/support" element={<SupportView />} />
-        {/* <Route path="/register" element={<RegisterForm />} /> */}
-        <Route path="/login" element={<Login />} />
-        {/* <Route path="/ForgateAccDetails" element={<ForgotAccDetails />} />  */}
+        <Route path="/register" element={<RegisterForm />} />
+        <Route path="/login" element={<LoginForm />} />
+        <Route path="/ForgateAccDetails" element={<ForgotAccDetails />} /> 
         <Route path="/booking" element={<Booking />} />
         <Route path="/about" element={<About />} />
         <Route path="/passenger-details" element={<PassengerForm />} />
         <Route path="/faqs" element={<FAQs />} />
         <Route path="/train-explorer/train-detail/:id" element={<TrainDetails />} />
         <Route path="/payment" element={<Payment />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/register" element={<CreateAccount/>} />
         <Route path="/forgot-account" element={<ForgotAccount/>} />
 

@@ -1,13 +1,13 @@
 import React from "react";
 import Button from "./Button";
-import { Link } from "react-router"; 
+import { Link } from "react-router-dom"; 
 
 const TrainDetailsCard = ({ train }) => {
   const { id, name, number, type, departure, arrival, duration, price, availability, image } = train;
 
   return (
     <Link to={`train-detail/${id}`}>
-      <div className="bg-white shadow-md rounded-xl p-4 md:w-[400px] md:h-[470px] w-[300px] h-[400px] hover:scale-105 transition-transform border border-gray-300">
+      <div className="bg-white shadow-md rounded-xl p-4 w-[400px] h-[500px] hover:scale-105 transition-transform border border-gray-300">
         <img 
             src={image} 
             alt={name} 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router"; 
+import { useParams } from "react-router-dom"; 
 import trainJsonData from "./../../config/trainData";
 
 export default function TrainDetails() {
