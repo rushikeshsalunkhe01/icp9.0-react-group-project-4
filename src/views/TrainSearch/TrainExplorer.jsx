@@ -21,7 +21,7 @@ const TrainExplorer = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center bg-gray-100 p-6">
-      <h1 className="text-3xl font-bold mb-8 mt-20 text-green-800">Train Explorer</h1>
+      <h1 className="md:text-3xl text-xl font-bold md:mb-8 mb-3 mt-20 text-green-800">Train Explorer</h1>
 
       {/* Search & Filter Section */}
       <div className="flex w-full gap-6 flex-wrap justify-center">
@@ -31,12 +31,12 @@ const TrainExplorer = () => {
           placeholder={`Search by train ${searchBy}...`}
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          className="p-2 rounded-md w-2/3 sm:w-1/3 border border-gray-400 focus:border-green-700 outline-none text-lg"
+          className="p-2 rounded-md md:w-2/3 w-full border border-gray-400 focus:border-green-700 outline-none md:text-lg text-sm"
         />
 
         {/* Search By Dropdown */}
         <select
-          className="p-2 rounded-md border border-gray-400"
+          className="p-2 rounded-md border border-gray-400 sm:w-[50%] text-sm"
           value={searchBy}
           onChange={(e) => setSearchBy(e.target.value)}
         >
@@ -46,7 +46,7 @@ const TrainExplorer = () => {
 
         {/* Train Type Filter Dropdown */}
         <select
-          className="p-2 rounded-md border border-gray-400"
+          className="p-2 rounded-md border border-gray-400 sm:w-[50%] text-sm"
           value={trainType}
           onChange={(e) => setTrainType(e.target.value)}
         >

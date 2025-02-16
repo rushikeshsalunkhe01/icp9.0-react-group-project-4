@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link } from "react-router"; // Fixed import
+import { Link } from "react-router"; 
 import { ChevronDown, Menu, X } from "lucide-react";
 import { TramFront } from "lucide-react";
 
@@ -104,8 +104,8 @@ const Navbar = () => {
               </div>
             )}
           </div>
-
         </div>
+
         {/* Mobile Menu Button */}
         <div className="md:hidden">
           <button onClick={() => setMobileMenu(!mobileMenu)} className="text-white text-xl">
@@ -116,13 +116,25 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {mobileMenu && (
-        <div className="md:hidden bg-[#008000] text-white flex flex-col space-y-3 p-4"> {/* Reduced space-y-4 to space-y-3 */}
+        <div className="md:hidden bg-[#73db73] text-green-800 flex flex-col space-y-7 p-4"> {/* Reduced space-y-4 to space-y-3 */}
           <Link to="/train-explorer" className="hover:text-[#FFA500]" onClick={() => setMobileMenu(false)}>
             Train Explorer
           </Link>
-          <Link to="/booking" className="hover:text-[#FFA500]" onClick={() => setMobileMenu(false)}>
-            Booking
-          </Link>
+          <div className="relative">
+            <button
+              onClick={() => toggleDropdown("booking")}
+              className="hover:text-[#FFA500] flex items-center"
+            >
+              Booking <ChevronDown className="ml-1" />
+            </button>
+            {dropdown === "booking" && (
+              <div className="absolute bg-white text-green-800 mt-5 w-48 shadow-lg rounded-lg"> {/* Reduced mt-5 to mt-2 */}
+                <Link to="/booking" className="block px-4 py-2 text-lg hover:bg-gray-200">Book Ticket</Link>
+                <Link to="/passenger-details" className="block text-lg px-4 py-2 hover:bg-gray-200">Passenger Details</Link>
+                <Link to="/payment" className="block px-4 py-2 text-lg hover:bg-gray-200">Payment</Link>
+              </div>
+            )}
+          </div>
           <Link to="/pnr-status" className="hover:text-[#FFA500]" onClick={() => setMobileMenu(false)}>
             PNR Status
           </Link>
