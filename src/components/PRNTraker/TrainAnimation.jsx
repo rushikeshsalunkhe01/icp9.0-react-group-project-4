@@ -36,7 +36,7 @@ const TrainAnimation = ({ speed = 6 }) => {
           repeatType: "loop",
         }}
       >
-        <img src={trainGif} alt="Moving Train" className="w-32 md:w-40 lg:w-52 mb-7" />
+        <img src={trainGif} alt="Moving Train" className="w-32 md:w-40 lg:w-52 " />
       </motion.div>
     </div>
   );

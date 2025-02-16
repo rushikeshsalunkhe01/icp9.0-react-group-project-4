@@ -80,7 +80,7 @@ const PNRStatus = () => {
         <TrainAnimation />
         <div className="w-full h-1 bg-gray-700 mt-1"></div> {/* Track Line */}
       </div>
-      <Footer className="mt-7" />
+      <Footer className="mt-10" /> {/* Add margin-top to the Footer */}
     </div>
   );
 };
