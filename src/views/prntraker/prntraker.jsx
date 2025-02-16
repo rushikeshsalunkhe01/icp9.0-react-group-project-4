@@ -46,26 +46,26 @@ const PNRStatus = () => {
   return (
     <div className="relative min-h-screen flex flex-col">
       <Navbar />
-      <div className="  mt-10 flex-grow flex flex-col justify-center items-center px-4">
-        <div className="bg-white shadow-2xl rounded-lg p-6 w-full max-w-lg text-center">
-          <h2 className="text-2xl font-bold text-blue-800">PNR Status</h2>
+      <div className="mt-10 flex-grow flex flex-col justify-center items-center px-4 md:px-8">
+        <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-md sm:max-w-lg lg:max-w-xl text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-blue-800 mb-4">PNR Status</h2>
           <input
             type="text"
             value={pnr}
             onChange={(e) => setPnr(e.target.value)}
             placeholder="Enter 10-digit PNR Number"
-            className="w-full p-3 border border-gray-300 rounded mb-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+            className="w-full p-3 border border-gray-300 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-green-500"
           />
-          {error && <p className="text-red-500 text-sm mb-2">{error}</p>}
+          {error && <p className="text-red-500 text-sm mt-2">{error}</p>}
           <button
             onClick={fetchPNRStatus}
-            className="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700 transition-all duration-300"
+            className="w-full bg-green-600 text-white py-3 rounded-lg mt-4 text-lg hover:bg-green-700 transition-all duration-300"
             disabled={loading}
           >
             {loading ? "Checking..." : "Check Status"}
           </button>
           {status && (
-            <div className="mt-4 p-4 bg-gray-100 rounded-lg border border-gray-300">
+            <div className="mt-5 p-4 bg-gray-100 rounded-lg border border-gray-300 text-left text-lg">
               <p><strong>Passenger:</strong> {status.passenger}</p>
               <p><strong>Train:</strong> {status.train} ({status.type})</p>
               <p><strong>Status:</strong> {status.status}</p>
@@ -76,11 +76,14 @@ const PNRStatus = () => {
           )}
         </div>
       </div>
-      <div className="relative mt-10">
+      
+      {/* Train Animation and Track */}
+      <div className="relative w-full mt-10">
         <TrainAnimation />
-        <div className="w-full h-1 bg-gray-700 mt-1"></div> {/* Track Line */}
+        <div className="w-full h-2 bg-gray-700 mt-2"></div> {/* Track Line */}
       </div>
-      <Footer className="mt-10" /> {/* Add margin-top to the Footer */}
+
+      <Footer className="mt-10" />
     </div>
   );
 };
